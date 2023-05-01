@@ -1,6 +1,8 @@
 #!/usr/bin/env node
 
 import minimist from 'minimist';
+import { rps } from "/lib/rpsls.js"
+
 
 const args = minimist(process.argv.slice(2));
 
@@ -10,6 +12,13 @@ if(args.h || args.help) {
 
 if(args.r || args.rules) {
     getRules();
+}
+
+if(args[0]==null) {
+    rps(null);
+}
+else {
+    rps(args[0]);
 }
 
 function getHelp() {

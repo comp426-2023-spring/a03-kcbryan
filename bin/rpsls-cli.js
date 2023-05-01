@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 import minimist from 'minimist';
+import { rpsls } from "/lib/rpsls.js"
 
 const args = minimist(process.argv.slice(2));
 
@@ -11,6 +12,14 @@ if(args.h || args.help) {
 if(args.r || args.rules) {
     getRules();
 }
+
+if(args[0]==null) {
+    rpsls(null);
+}
+else {
+    rpsls(args[0]);
+}
+
 
 function getHelp() {
     console.log("Usage: node-rps [SHOT]");
