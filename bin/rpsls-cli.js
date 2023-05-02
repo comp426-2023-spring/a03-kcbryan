@@ -26,7 +26,7 @@ if(args._.length==0) {
 }
 else{
     try {
-        console.log(rps(args._[0]));
+        console.log(rpsls(args._[0]));
     } catch (error) {
         console.log("Argument out of range.");
         getHelp();
