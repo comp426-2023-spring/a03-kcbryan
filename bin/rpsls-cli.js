@@ -7,14 +7,17 @@ const args = minimist(process.argv.slice(2));
 
 if(args.h || args.help) {
     getHelp();
+    process.exit(0);
 }
 
 if(args.r || args.rules) {
     getRules();
+    process.exit(0);
 }
 
 if(args._.length>1) {
-    console.error(args._[1] + " is out of range. ");
+    console.error("Too many arguments! No more than one please :)");
+    process.exit(1);
     process.exit(1);
 }
 
@@ -37,7 +40,6 @@ function getHelp() {
     console.log("\t\te.g. {'player':'rock'}");
     console.log("\tnode-rpsls rock   Return JSON with results for RPSLS played against a simulated opponent.");
     console.log("\t\te.g {'player':'rock','opponent':'Spock','result':'win'}")
-    process.exit(0);
 }
 
 function getRules() {
@@ -52,6 +54,5 @@ function getRules() {
     console.log("\t- Paper DISPROVES Spock");
     console.log("\t- Spock VAPORIZES Rock");
     console.log("\t- Rock CRUSHES Scissors");
-    process.exit(0);
 };
 

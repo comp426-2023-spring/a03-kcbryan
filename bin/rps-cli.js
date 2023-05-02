@@ -8,22 +8,33 @@ const args = minimist(process.argv.slice(2));
 
 if(args.h || args.help) {
     getHelp();
+    process.exit(0);
 }
 
 if(args.r || args.rules) {
     getRules();
+    process.exit(0);
 }
 
 if(args._.length>1) {
-    console.error(args._[1] + " is out of range. ");
+    console.error("Too many arguments! No more than one please :)");
     process.exit(1);
 }
 
 if(args._.length==0) {
     console.log(rps());
 }
+
 else{
-    console.log(rps(args._[0]));
+    try {
+        console.log(rps(args._[0]));
+    } catch (error) {
+        console.log("Argument out of range.");
+        getHelp();
+        getRules();
+        process.exit(1);
+    }
+    
 }
 
 function getHelp() {
@@ -36,7 +47,6 @@ function getHelp() {
     console.log("\t\te.g. {'player':'rock'}");
     console.log("\tnode-rps rock   Return JSON with results for RPS played against a simulated opponent.");
     console.log("\t\te.g {'player':'rock','opponent':'scissors','result':'win'}")
-    process.exit(0);
 }
 
 function getRules() {
@@ -44,6 +54,5 @@ function getRules() {
     console.log("\t- Scissors CUTS Paper");
     console.log("\t- Paper COVERS Rock");
     console.log("\t- Rock CRUSHES Scissors")
-    process.exit(0);
 };
 
