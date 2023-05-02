@@ -25,7 +25,14 @@ if(args._.length==0) {
     console.log(rpsls());
 }
 else{
-    console.log(rpsls(args._[0]));
+    try {
+        console.log(rps(args._[0]));
+    } catch (error) {
+        console.log("Argument out of range.");
+        getHelp();
+        getRules();
+        process.exit(1);
+    }
 }
 
 
