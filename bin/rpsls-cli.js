@@ -17,6 +17,7 @@ if(args._.length>1) {
     console.error(args._[1] + " is out of range. ");
     process.exit(1);
 }
+
 if(args._.length==0) {
     console.log(rpsls());
 }
