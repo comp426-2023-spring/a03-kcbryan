@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 import minimist from 'minimist';
-import { rpsls } from "/lib/rpsls.js"
+import { rpsls } from "../lib/rpsls.js"
 
 const args = minimist(process.argv.slice(2));
 
@@ -13,12 +13,17 @@ if(args.r || args.rules) {
     getRules();
 }
 
-if(args[0]==null) {
-    rpsls(null);
+if(args._.length>1) {
+    console.error(args._[1] + " is out of range. ");
+    process.exit(1);
 }
-else {
-    rpsls(args[0]);
+if(args._.length==0) {
+    console.log(rpsls());
 }
+else{
+    console.log(rpsls(args._[0]));
+}
+
 
 
 function getHelp() {
@@ -31,7 +36,7 @@ function getHelp() {
     console.log("\t\te.g. {'player':'rock'}");
     console.log("\tnode-rpsls rock   Return JSON with results for RPSLS played against a simulated opponent.");
     console.log("\t\te.g {'player':'rock','opponent':'Spock','result':'win'}")
-    exit(0);
+    process.exit(0);
 }
 
 function getRules() {
@@ -45,6 +50,7 @@ function getRules() {
     console.log("\t- Lizard EATS Paper");
     console.log("\t- Paper DISPROVES Spock");
     console.log("\t- Spock VAPORIZES Rock");
-    console.log("\t- Rock CRUSHES Scissors")
+    console.log("\t- Rock CRUSHES Scissors");
+    process.exit(0);
 };
 
