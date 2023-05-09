@@ -36,7 +36,7 @@ else{
 }
 
 
-
+//output help statement when called by the terminal argument
 function getHelp() {
     console.log("Usage: node-rps [SHOT]");
     console.log("Play the Lizard-Spock Expansion of Rock Paper Scissors (RPSLS)!\n");
