@@ -12,6 +12,7 @@ if(args.h || args.help) {
     process.exit(0);
 }
 
+//check for presence of rules variable
 if(args.r || args.rules) {
     getRules();
     process.exit(0);
