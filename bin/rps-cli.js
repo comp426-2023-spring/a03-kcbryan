@@ -29,6 +29,7 @@ if(args._.length==0) {
     console.log(rps());
 }
 
+//try to make function call for people providing a shot arg
 else{
     try {
         console.log(rps(args._[0]));
