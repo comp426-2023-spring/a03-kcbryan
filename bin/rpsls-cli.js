@@ -24,6 +24,7 @@ if(args._.length>1) {
     process.exit(1);
 }
 
+//call rpsls without user-inputted shot
 if(args._.length==0) {
     console.log(rpsls());
 }
