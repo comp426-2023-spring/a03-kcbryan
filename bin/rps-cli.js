@@ -42,7 +42,7 @@ else{
     
 }
 
-//prints out help message when help arg is called/included
+//prints out help message when help arg is included
 function getHelp() {
     console.log("Usage: node-rps [SHOT]");
     console.log("Play Rock Paper Scissors (RPS)\n");
@@ -55,6 +55,7 @@ function getHelp() {
     console.log("\t\te.g {'player':'rock','opponent':'scissors','result':'win'}")
 }
 
+//prints out rules message when r arg is included
 function getRules() {
     console.log("Rules for Rock Paper Scissors:\n");
     console.log("\t- Scissors CUTS Paper");
