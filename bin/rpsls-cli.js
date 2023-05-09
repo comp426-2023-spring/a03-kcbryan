@@ -17,6 +17,7 @@ if(args.r || args.rules) {
     process.exit(0);
 }
 
+//prevent the usage of multiple arguments in terminal
 if(args._.length>1) {
     console.error("Too many arguments! No more than one please :)");
     process.exit(1);
