@@ -49,6 +49,7 @@ function getHelp() {
     console.log("\t\te.g {'player':'rock','opponent':'Spock','result':'win'}")
 }
 
+//output rules when called by terminal argument
 function getRules() {
     console.log("Rules for the Lizard-Spock Expansion of Rock Paper Scissors:\n");
     console.log("\t- Scissors CUTS Paper");
