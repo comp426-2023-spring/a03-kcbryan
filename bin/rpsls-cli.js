@@ -5,6 +5,7 @@ import { rpsls } from "../lib/rpsls.js"
 
 const args = minimist(process.argv.slice(2));
 
+//check for presence of help argument
 if(args.h || args.help) {
     getHelp();
     process.exit(0);
