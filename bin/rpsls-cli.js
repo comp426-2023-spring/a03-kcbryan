@@ -28,6 +28,8 @@ if(args._.length>1) {
 if(args._.length==0) {
     console.log(rpsls());
 }
+
+//try to call rpsls with the user-inputted shot
 else{
     try {
         console.log(rpsls(args._[0]));
