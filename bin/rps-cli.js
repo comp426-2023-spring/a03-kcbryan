@@ -6,18 +6,19 @@ import { rps } from "../lib/rpsls.js"
 
 const args = minimist(process.argv.slice(2));
 
-//check for presence of help variable
+//check for presence of help argument
 if(args.h || args.help) {
     getHelp();
     process.exit(0);
 }
 
-//check for presence of rules variable
+//check for presence of rules argument
 if(args.r || args.rules) {
     getRules();
     process.exit(0);
 }
 
+//gatekeep people who add too many arguments"
 if(args._.length>1) {
     console.error("Too many arguments! No more than one please :)");
     process.exit(1);
