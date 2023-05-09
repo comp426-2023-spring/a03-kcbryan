@@ -42,6 +42,7 @@ else{
     
 }
 
+//prints out help message when help arg is called/included
 function getHelp() {
     console.log("Usage: node-rps [SHOT]");
     console.log("Play Rock Paper Scissors (RPS)\n");
