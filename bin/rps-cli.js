@@ -24,6 +24,7 @@ if(args._.length>1) {
     process.exit(1);
 }
 
+//make function call for users who provide no shot
 if(args._.length==0) {
     console.log(rps());
 }
